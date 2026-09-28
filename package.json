@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "format": "prettier --write .",
-  "lint:css": "stylelint \"css/**/*.css\""
+  "scripts": {
+    "format": "prettier --write .",
+    "lint:css": "stylelint \"css/**/*.css\""
   },
   "keywords": [],
   "author": "",
