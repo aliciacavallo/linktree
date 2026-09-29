@@ -1,0 +1,96 @@
+@layer tokens {
+  :root {
+    /* Crème (fonds) */
+    --color-cream-50: #fffdf9;
+    --color-cream-100: #fff4ec;
+    --color-cream-200: #ffe7d8;
+    --color-cream-300: #d9bfb0;
+
+    /* Corail (marque) */
+    --color-coral-200: #ffc9b0;
+    --color-coral-500: #ff6b47;
+    --color-coral-600: #ff5530;
+    --color-coral-700: #c23a1c;
+
+    /* Teal (accent, focus, statut) */
+    --color-teal-200: #cfe7e2;
+    --color-teal-700: #2e6f68;
+
+    /* Brun (encre) */
+    --color-brown-400: #9a7a68;
+    --color-brown-500: #7a5c4c;
+    --color-brown-900: #3b2216;
+
+    /* Familles de polices */
+    --font-family-display: "Baloo 2", system-ui, sans-serif;
+    --font-family-body: "Work Sans", system-ui, sans-serif;
+
+    /* Graisses */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Tailles de texte (base 16px) */
+    --font-size-100: 0.875rem; /* 14px */
+    --font-size-200: 1rem; /* 16px */
+    --font-size-300: 1.125rem; /* 18px */
+    --font-size-600: 2rem; /* 32px */
+
+    /* Interlignage */
+    --line-height-tight: 1.1;
+    --line-height-snug: 1.3;
+    --line-height-normal: 1.55;
+
+    /* Espacements — grille de 4px */
+    --space-1: 0.25rem; /* 4 */
+    --space-2: 0.5rem; /* 8 */
+    --space-3: 0.75rem; /* 12 */
+    --space-4: 1rem; /* 16 */
+    --space-5: 1.25rem; /* 20 */
+    --space-6: 1.5rem; /* 24 */
+    --space-8: 2rem; /* 32 */
+    --space-10: 2.5rem; /* 40 */
+    --space-12: 3rem; /* 48 */
+
+    /* Rayons */
+    --radius-sm: 0.5rem;
+    --radius-md: 1.5rem;
+    --radius-full: 999px;
+
+    /* Tailles */
+    --size-avatar: 7rem; /* 112px */
+    --size-target-min: 3rem; /* 48px : cible tactile confortable */
+    --size-content-max: 35rem; /* 560px : largeur de la colonne */
+    --size-bubble-lg: 30rem; /* 480px */
+    --size-bubble-md: 15rem; /* 240px */
+    --size-bubble-sm: 7.5rem; /* 120px */
+
+    /* Bordures */
+    --border-width-thin: 1px;
+    --border-width-thick: 2px;
+    --border-width-focus: 3px;
+
+    /* Opacité */
+    --opacity-50: 0.5;
+
+    /* Mouvement — durées et courbe */
+    --duration-fast: 150ms;
+    --duration-base: 250ms;
+    --duration-ambient: 40s; /* mouvement de fond, très lent */
+    --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+
+    /* Mouvement — amplitudes */
+    --motion-lift: -2px; /* soulèvement au survol */
+    --motion-press: 0.98; /* léger écrasement au clic */
+    --motion-drift: 1.5rem; /* 24px : déplacement des bulles */
+  }
+
+  /* Mouvement réduit : on coupe les durées à la source */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --duration-fast: 0ms;
+      --duration-base: 0ms;
+    }
+  }
+}
