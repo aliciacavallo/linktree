@@ -3,6 +3,12 @@
   "rules": {
     "selector-max-id": 0,
     "declaration-no-important": true,
-    "selector-max-compound-selectors": 3
+    "selector-max-compound-selectors": 3,
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      {
+        "message": "Les classes doivent suivre BEM : bloc__element--modificateur (kebab-case)"
+      }
+    ]
   }
 }
