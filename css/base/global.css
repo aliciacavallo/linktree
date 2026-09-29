@@ -1,0 +1,38 @@
+/* ==========================================================================
+   global.css — styles par défaut de la page et des balises (tokens)
+   ========================================================================== */
+
+@layer base {
+  /* La page */
+  body {
+    background-color: var(--color-bg-page);
+    color: var(--color-text-default);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-200);
+    line-height: var(--line-height-normal);
+  }
+
+  /* Le titre principal utilise la police de marque */
+  h1 {
+    font-family: var(--font-family-display);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+  }
+
+  /* Les liens par défaut (les cartes auront leur propre style) */
+  a {
+    color: var(--color-text-accent);
+  }
+
+  /* Le focus clavier, visible et identique partout */
+  :is(a, button):focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /* Le texte sélectionné à la souris prend la couleur de la marque */
+  ::selection {
+    background-color: var(--color-brand-subtle);
+    color: var(--color-text-default);
+  }
+}
