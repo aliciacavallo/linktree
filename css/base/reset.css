@@ -1,0 +1,80 @@
+/* ==========================================================================
+   reset.css — d'après le « Modern CSS Reset » de Josh Comeau
+   https://www.joshwcomeau.com/css/custom-css-reset/
+   Adapté : @layer, reset des listes, sans id ni line-height
+   ========================================================================== */
+
+@layer reset {
+  /* 1. Un modèle de boîte plus intuitif */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* 2. Pas de marges par défaut (sauf dialog, qui s'en sert pour se centrer) */
+  *:not(dialog) {
+    margin: 0;
+  }
+
+  /* 3. Permet d'animer vers des mots-clés comme height: auto */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  }
+
+  /* 4. Un rendu de texte plus fin (macOS) */
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 5. Les listes marquées role="list" perdent puces et retrait */
+  :where(ul, ol)[role="list"] {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* 6. Les médias ne débordent pas */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* 7. Les champs de formulaire héritent de la police */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* 8. Les mots longs passent à la ligne */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* 9. Des retours à la ligne plus harmonieux */
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+}
