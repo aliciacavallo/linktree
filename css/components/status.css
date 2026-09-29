@@ -1,0 +1,16 @@
+/* ==========================================================================
+   status.css — composant Figma « Status »
+   ========================================================================== */
+
+@layer components {
+  .status {
+    --status-color: var(--color-status-text);
+    --status-font-size: var(--font-size-100);
+    --status-font-weight: var(--font-weight-medium);
+
+    color: var(--status-color);
+    font-size: var(--status-font-size);
+    font-weight: var(--status-font-weight);
+    line-height: var(--line-height-snug);
+  }
+}

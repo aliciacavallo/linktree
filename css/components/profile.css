@@ -1,0 +1,36 @@
+/* ==========================================================================
+   profile.css — composant Figma « Profile »
+   ========================================================================== */
+
+@layer components {
+  .profile {
+    /* Tokens du composant */
+    --profile-gap: var(--space-3);
+    --profile-avatar-size: var(--size-avatar);
+    --profile-avatar-border-color: var(--color-brand-subtle);
+    --profile-name-size: var(--font-size-600);
+    --profile-bio-color: var(--color-text-muted);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--profile-gap);
+    text-align: center;
+  }
+
+  .profile__avatar {
+    width: var(--profile-avatar-size);
+    height: var(--profile-avatar-size);
+    border: var(--border-width-thick) solid var(--profile-avatar-border-color);
+    border-radius: var(--radius-full);
+    object-fit: cover;
+  }
+
+  .profile__name {
+    font-size: var(--profile-name-size);
+  }
+
+  .profile__bio {
+    color: var(--profile-bio-color);
+  }
+}
