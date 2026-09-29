@@ -1,7 +1,22 @@
 @layer reset, tokens, base, layout, components, utilities;
 
-@import url("tokens.css");
+/* Tokens */
+@import url("tokens/primitives.css");
+@import url("tokens/semantic.css");
+
+/* Base */
 @import url("base/reset.css");
 @import url("base/global.css");
+
+/* Layout */
 @import url("layout/page.css");
+
+/* Components */
+@import url("components/bubbles.css");
 @import url("components/profile.css");
+@import url("components/status.css");
+@import url("components/link-group.css");
+@import url("components/link-card.css");
+
+/* Utilities */
+@import url("utilities/visually-hidden.css");
