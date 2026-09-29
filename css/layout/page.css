@@ -1,0 +1,45 @@
+/* ==========================================================================
+   page.css — la mise en page
+   ========================================================================== */
+
+@layer layout {
+  .page {
+    /* Tokens du layout */
+    --page-max-width: var(--size-content-max);
+    --page-padding-block: var(--space-12);
+    --page-padding-inline: var(--space-5);
+    --page-gap: var(--space-10);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--page-gap);
+    max-width: var(--page-max-width);
+    margin-inline: auto;
+    padding: var(--page-padding-block) var(--page-padding-inline);
+  }
+
+  .page__main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--page-gap);
+  }
+
+  .page__footer {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-100);
+    text-align: center;
+  }
+
+  /* Desktop : la colonne devient une carte */
+  @media (width >= 48rem) {
+    .page {
+      --page-padding-block: var(--space-10);
+      --page-padding-inline: var(--space-10);
+
+      margin-block: var(--space-12);
+      background-color: var(--color-bg-surface);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+  }
+}
