@@ -32,6 +32,8 @@ L'objectif n'est pas l'effet visuel, mais **la qualité du code**.
 
 Les variants ne réécrivent aucune propriété : ils changent seulement la valeur des variables du composant.
 
+**Voir la maquette Figma : [Figma](https://www.figma.com/design/Nny4156fBSTmvg1VFDw5uX/Mon-linktree?node-id=0-1)**
+
 ## Architecture
 
 ```
