@@ -64,7 +64,6 @@ Puis ouvrir `index.html` dans le navigateur.
 
 - [ ] Héberger les polices en local (WOFF2)
 - [ ] Bouton pour mettre en pause l'animation des bulles
-- [ ] Protéger l'adresse e-mail du spam avec un peu de JavaScript
 
 ## Crédits
 
