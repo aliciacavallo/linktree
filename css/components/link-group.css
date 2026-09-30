@@ -1,0 +1,31 @@
+/* ==========================================================================
+   link-group.css — composant Figma « Link group »
+   ========================================================================== */
+
+@layer components {
+  .link-group {
+    /* Tokens du composant */
+    --link-group-gap: var(--space-3);
+    --link-group-title-color: var(--color-text-muted);
+    --link-group-title-size: var(--font-size-100);
+    --link-group-title-weight: var(--font-weight-medium);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--link-group-gap);
+  }
+
+  .link-group__title {
+    color: var(--link-group-title-color);
+    font-size: var(--link-group-title-size);
+    font-weight: var(--link-group-title-weight);
+    line-height: var(--line-height-snug);
+    text-align: center;
+  }
+
+  .link-group__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--link-group-gap);
+  }
+}
