@@ -1,0 +1,101 @@
+/* ==========================================================================
+   bubbles.css — décor de fond (aria-hidden)
+   Mobile : 2 bulles dans les coins, loin du texte.
+   Desktop : 3 bulles, dont une grande, en diagonale autour de la carte.
+   ========================================================================== */
+
+@layer components {
+  /* Le calque de fond : couvre l'écran, reste derrière, ne capte aucun clic */
+  .bubbles {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  /* Une bulle : un reflet clair + un dégradé corail → teal qui s'efface au bord */
+  .bubbles__bubble {
+    --bubble-size: var(--size-bubble-sm);
+    --bubble-duration: var(--duration-ambient);
+
+    position: absolute;
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+    border-radius: var(--radius-full);
+    opacity: var(--opacity-50);
+    background:
+      radial-gradient(
+        circle at 35% 30%,
+        var(--color-bg-surface),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle closest-side,
+        var(--color-decor-warm),
+        var(--color-decor-cool) 80%,
+        transparent
+      );
+    animation: bubble-drift var(--bubble-duration) ease-in-out infinite
+      alternate;
+  }
+
+  /* Grande : en haut à gauche, à moitié hors de l'écran */
+  .bubbles__bubble--lg {
+    --bubble-size: var(--size-bubble-md);
+
+    top: calc(var(--bubble-size) / -3);
+    left: calc(var(--bubble-size) / -3);
+  }
+
+  /* Moyenne : en bas à droite, rythme un peu plus rapide */
+  .bubbles__bubble--md {
+    --bubble-size: var(--size-bubble-sm);
+    --bubble-duration: calc(var(--duration-ambient) * 0.75);
+
+    right: calc(var(--bubble-size) / -3);
+    bottom: calc(var(--bubble-size) / -3);
+  }
+
+  /* Petite : cachée sur mobile, trop près du texte */
+  .bubbles__bubble--sm {
+    --bubble-duration: calc(var(--duration-ambient) * 1.25);
+
+    display: none;
+    top: 20%;
+    right: 12%;
+  }
+
+  /* Desktop : les bulles grandissent et la petite apparaît */
+  @media (width >= 48rem) {
+    .bubbles__bubble--lg {
+      --bubble-size: var(--size-bubble-lg);
+    }
+
+    .bubbles__bubble--md {
+      --bubble-size: var(--size-bubble-md);
+    }
+
+    .bubbles__bubble--sm {
+      display: block;
+    }
+  }
+
+  /* Mouvement réduit : les bulles restent immobiles */
+  @media (prefers-reduced-motion: reduce) {
+    .bubbles__bubble {
+      animation: none;
+    }
+  }
+
+  /* Le flottement : un léger aller-retour en diagonale */
+  @keyframes bubble-drift {
+    from {
+      transform: translate(0, 0);
+    }
+
+    to {
+      transform: translate(var(--motion-drift), calc(var(--motion-drift) * -1));
+    }
+  }
+}
