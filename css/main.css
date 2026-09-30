@@ -17,6 +17,3 @@
 @import url("components/status.css");
 @import url("components/link-group.css");
 @import url("components/link-card.css");
-
-/* Utilities */
-@import url("utilities/visually-hidden.css");
