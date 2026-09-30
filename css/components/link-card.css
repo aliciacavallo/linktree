@@ -1,0 +1,65 @@
+/* ==========================================================================
+   link-card.css — composant Figma « Link card »
+   ========================================================================== */
+
+@layer components {
+  /* ---------- Variant Default ---------- */
+  .link-card {
+    /* Tokens du composant */
+    --link-card-bg: var(--color-bg-surface);
+    --link-card-bg-hover: var(--color-bg-surface-hover);
+    --link-card-text: var(--color-text-default);
+    --link-card-border: var(--color-border-default);
+    --link-card-border-hover: var(--color-border-strong);
+    --link-card-weight: var(--font-weight-semibold);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--size-target-min);
+    padding: var(--space-4) var(--space-6);
+    background-color: var(--link-card-bg);
+    color: var(--link-card-text);
+    border: var(--border-width-thin) solid var(--link-card-border);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
+    font-weight: var(--link-card-weight);
+    line-height: var(--line-height-snug);
+    text-align: center;
+    text-decoration: none;
+    transition-property: background-color, border-color, box-shadow, transform;
+    transition-duration: var(--duration-base);
+    transition-timing-function: var(--easing-standard);
+  }
+
+  /* ---------- Variant Featured : on change les valeurs---------- */
+  .link-card--featured {
+    --link-card-bg: var(--color-brand-default);
+    --link-card-bg-hover: var(--color-brand-hover);
+    --link-card-text: var(--color-text-on-brand);
+    --link-card-border: var(--color-brand-default);
+    --link-card-border-hover: var(--color-brand-hover);
+    --link-card-weight: var(--font-weight-bold);
+  }
+
+  /* ---------- State Hover---------- */
+  @media (hover: hover) {
+    .link-card:hover {
+      background-color: var(--link-card-bg-hover);
+      border-color: var(--link-card-border-hover);
+      box-shadow: var(--shadow-md);
+      transform: translateY(var(--motion-lift));
+    }
+  }
+
+  /* ---------- State Pressed ---------- */
+  .link-card:active {
+    background-color: var(--link-card-bg-hover);
+    box-shadow: var(--shadow-sm);
+    transform: scale(var(--motion-press));
+    transition-duration: var(--duration-fast);
+  }
+
+  /* ---------- State Focus ----------
+     L'anneau vient de global.css */
+}
