@@ -1,7 +1,7 @@
 /* ==========================================================================
-   bubbles.css — décor de fond (aria-hidden)
+   bubbles.css — décor de fond (aria-hidden dans le HTML)
    Mobile : 2 bulles dans les coins, loin du texte.
-   Desktop : 3 bulles, dont une grande, en diagonale autour de la carte.
+   Desktop : 3 bulles en diagonale autour de la carte.
    ========================================================================== */
 
 @layer components {
@@ -14,30 +14,35 @@
     pointer-events: none;
   }
 
-  /* Une bulle : un reflet clair + un dégradé corail → teal qui s'efface au bord */
+  /* Une bulle de savon : 2 reflets blancs + un dégradé corail → teal */
   .bubbles__bubble {
     --bubble-size: var(--size-bubble-sm);
     --bubble-duration: var(--duration-ambient);
+    --bubble-delay: 0s;
 
     position: absolute;
     width: var(--bubble-size);
     height: var(--bubble-size);
     border-radius: var(--radius-full);
-    opacity: var(--opacity-50);
     background:
       radial-gradient(
-        circle at 35% 30%,
-        var(--color-bg-surface),
-        transparent 35%
+        circle at 30% 28%,
+        var(--color-bubble-highlight),
+        transparent 40%
       ),
       radial-gradient(
-        circle closest-side,
-        var(--color-decor-warm),
-        var(--color-decor-cool) 80%,
-        transparent
+        circle at 68% 72%,
+        var(--color-bubble-glint),
+        transparent 45%
+      ),
+      linear-gradient(
+        135deg,
+        var(--color-bubble-warm),
+        var(--color-bubble-cool)
       );
-    animation: bubble-drift var(--bubble-duration) ease-in-out infinite
-      alternate;
+    box-shadow: var(--shadow-bubble);
+    animation: bubble-drift var(--bubble-duration) ease-in-out
+      var(--bubble-delay) infinite;
   }
 
   /* Grande : en haut à gauche, à moitié hors de l'écran */
@@ -48,25 +53,27 @@
     left: calc(var(--bubble-size) / -3);
   }
 
-  /* Moyenne : en bas à droite, rythme un peu plus rapide */
+  /* Moyenne : en bas à droite, décalée dans le temps */
   .bubbles__bubble--md {
     --bubble-size: var(--size-bubble-sm);
-    --bubble-duration: calc(var(--duration-ambient) * 0.75);
+    --bubble-duration: calc(var(--duration-ambient) * 1.3);
+    --bubble-delay: calc(var(--duration-ambient) * -0.5);
 
     right: calc(var(--bubble-size) / -3);
     bottom: calc(var(--bubble-size) / -3);
   }
 
-  /* Petite : cachée sur mobile, trop près du texte */
+  /* Petite : cachée sur mobile (trop près du texte) */
   .bubbles__bubble--sm {
-    --bubble-duration: calc(var(--duration-ambient) * 1.25);
+    --bubble-duration: calc(var(--duration-ambient) * 0.8);
+    --bubble-delay: calc(var(--duration-ambient) * -0.25);
 
     display: none;
-    top: 20%;
-    right: 12%;
+    top: 18%;
+    right: 14%;
   }
 
-  /* Desktop : les bulles grandissent et la petite apparaît */
+  /* Desktop : les bulles grandissent, la petite apparaît */
   @media (width >= 48rem) {
     .bubbles__bubble--lg {
       --bubble-size: var(--size-bubble-lg);
@@ -88,14 +95,16 @@
     }
   }
 
-  /* Le flottement : un léger aller-retour en diagonale */
+  /* Le flottement du portfolio : monte, glisse, gonfle un peu, puis revient */
   @keyframes bubble-drift {
-    from {
-      transform: translate(0, 0);
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
     }
 
-    to {
-      transform: translate(var(--motion-drift), calc(var(--motion-drift) * -1));
+    50% {
+      transform: translate(var(--motion-drift-x), var(--motion-drift-y))
+        scale(var(--motion-drift-scale));
     }
   }
 }

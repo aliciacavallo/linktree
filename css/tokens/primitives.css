@@ -1,5 +1,18 @@
+/* ==========================================================================
+   tokens/primitives.css — niveau 1 : les valeurs brutes
+   Seul endroit (avec semantic.css) où des valeurs en dur sont autorisées.
+   Règle d'usage :
+   - COULEURS : jamais en direct dans un composant, toujours via semantic.css
+   - ÉCHELLES (espacements, tailles de texte, rayons, durées…) : utilisables
+     directement, ce sont déjà des pas réguliers et neutres
+   Figma : collection « Primitives » (color/coral/500 → --color-coral-500)
+   ========================================================================== */
+
 @layer tokens {
   :root {
+    /* Blanc (reflets) */
+    --color-white: #fff;
+
     /* Crème (fonds) */
     --color-cream-50: #fffdf9;
     --color-cream-100: #fff4ec;
@@ -71,19 +84,18 @@
     --border-width-thick: 2px;
     --border-width-focus: 3px;
 
-    /* Opacité */
-    --opacity-50: 0.5;
-
     /* Mouvement — durées et courbe */
     --duration-fast: 150ms;
     --duration-base: 250ms;
-    --duration-ambient: 40s; /* mouvement de fond, très lent */
+    --duration-ambient: 9s; /* flottement des bulles (comme le portfolio) */
     --easing-standard: cubic-bezier(0.2, 0, 0, 1);
 
     /* Mouvement — amplitudes */
     --motion-lift: -2px; /* soulèvement au survol */
     --motion-press: 0.98; /* léger écrasement au clic */
-    --motion-drift: 1.5rem; /* 24px : déplacement des bulles */
+    --motion-drift-x: 10px; /* flottement des bulles : horizontal */
+    --motion-drift-y: -18px; /* flottement des bulles : vertical */
+    --motion-drift-scale: 1.03; /* flottement des bulles : léger gonflement */
   }
 
   /* Mouvement réduit : on coupe les durées à la source */

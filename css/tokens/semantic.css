@@ -1,6 +1,16 @@
+/* ==========================================================================
+   tokens/semantic.css — niveau 2 : le rôle de chaque valeur
+   Chaque variable pointe vers une primitive. Ce sont ces noms-là
+   que les fichiers base/, layout/ et components/ utilisent.
+   Figma : collection « Semantic » (color/text/default → --color-text-default)
+   Tous les couples texte/fond vérifiés à 4.5:1 minimum (WCAG AA).
+   ========================================================================== */
+
 @layer tokens {
   :root {
-    /* Une seule palette, pas de mode sombre (choix de marque)/
+    /* Une seule palette, pas de mode sombre (choix de marque) :
+       empêche le « mode sombre forcé » de certains navigateurs */
+    color-scheme: only light;
 
     /* Fonds */
     --color-bg-page: var(--color-cream-100);
@@ -25,9 +35,37 @@
     /* Statut (« Disponible ») */
     --color-status-text: var(--color-teal-700); /* 5.4:1 page, 5.8:1 carte */
 
-    /* Décor (bulles) */
-    --color-decor-warm: var(--color-coral-200);
-    --color-decor-cool: var(--color-teal-200);
+    /* Décor : bulles de savon (mêmes couleurs que le portfolio) */
+    --color-bubble-highlight: color-mix(
+      in srgb,
+      var(--color-white) 90%,
+      transparent
+    );
+    --color-bubble-glint: color-mix(
+      in srgb,
+      var(--color-white) 35%,
+      transparent
+    );
+    --color-bubble-glow: color-mix(
+      in srgb,
+      var(--color-white) 40%,
+      transparent
+    );
+    --color-bubble-warm: color-mix(
+      in srgb,
+      var(--color-coral-500) 55%,
+      transparent
+    );
+    --color-bubble-cool: color-mix(
+      in srgb,
+      var(--color-teal-700) 35%,
+      transparent
+    );
+    --color-bubble-shadow: color-mix(
+      in srgb,
+      var(--color-coral-600) 12%,
+      transparent
+    );
 
     /* Focus clavier — commun à tout ce qui est interactif */
     --focus-ring-color: var(--color-teal-700); /* 5.4:1 sur page */
@@ -37,5 +75,8 @@
     /* Ombres (brun transparent, jamais du noir pur) */
     --shadow-sm: 0 2px 6px rgb(59 34 22 / 6%);
     --shadow-md: 0 10px 24px rgb(59 34 22 / 10%);
+    --shadow-bubble:
+      inset 0 0 20px var(--color-bubble-glow),
+      0 12px 30px var(--color-bubble-shadow);
   }
 }
