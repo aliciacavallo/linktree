@@ -1,1 +1,14 @@
+# Dépendances
 node_modules/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Secrets (clés d'API, mots de passe)
+.env
+.env.*
+!.env.example
+
+# Journaux
+*.log
