@@ -23,12 +23,12 @@ L'objectif n'est pas l'effet visuel, mais **la qualité du code**.
 
 ## Du design au code
 
-| Figma | CSS |
-|---|---|
-| Collection de variables `Primitives` (`color/coral/500`) | `css/tokens/primitives.css` (`--color-coral-500`) |
+| Figma                                                     | CSS                                                |
+| --------------------------------------------------------- | -------------------------------------------------- |
+| Collection de variables `Primitives` (`color/coral/500`)  | `css/tokens/primitives.css` (`--color-coral-500`)  |
 | Collection de variables `Semantic` (`color/text/default`) | `css/tokens/semantic.css` (`--color-text-default`) |
-| Composant `Link card` · Variant `Default` / `Featured` | `.link-card` · `.link-card--featured` |
-| States `Hover` / `Pressed` / `Focus` | `:hover` / `:active` / `:focus-visible` |
+| Composant `Link card` · Variant `Default` / `Featured`    | `.link-card` · `.link-card--featured`              |
+| States `Hover` / `Pressed` / `Focus`                      | `:hover` / `:active` / `:focus-visible`            |
 
 Les variants ne réécrivent aucune propriété : ils changent seulement la valeur des variables du composant.
 
@@ -64,7 +64,7 @@ Puis ouvrir `index.html` dans le navigateur.
 
 ## Pistes d'amélioration
 
-- [ ] Héberger les polices en local (WOFF2)
+- [x] Héberger les polices en local (WOFF2)
 - [ ] Bouton pour mettre en pause l'animation des bulles
 
 ## Crédits
