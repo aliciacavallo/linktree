@@ -71,7 +71,3 @@ Puis ouvrir `index.html` dans le navigateur.
 
 - Reset CSS adapté du [Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/) de Josh Comeau.
 - Polices : [Baloo 2](https://fonts.google.com/specimen/Baloo+2) et [Work Sans](https://fonts.google.com/specimen/Work+Sans) (licence OFL).
-
----
-
-Conçu et codé par **Alicia Cavallo**, designer UI et développeuse front · [Portfolio](https://aliciacavallo.github.io/my-portfolio/) · [LinkedIn](https://www.linkedin.com/in/alicia-cavallo/)
