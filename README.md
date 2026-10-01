@@ -46,7 +46,7 @@ css/
 ```
 
 Ordre des couches, de la plus faible à la plus forte :
-`reset → tokens → base → layout → components → utilities`
+`reset → tokens → base → layout → components`
 
 ## Statistiques
 
